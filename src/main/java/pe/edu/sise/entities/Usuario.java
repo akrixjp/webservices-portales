@@ -1,13 +1,19 @@
 package pe.edu.sise.entities;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name="USUARIO_CLIENTE")
 public class Usuario {
 	
+	@Id
+	@GeneratedValue ( strategy =  GenerationType.AUTO )
 	private Integer COD_USUA;
+	
 	private Integer COD_CLIE;
 	private String NOM_USUA;
 	private String CLV_USUA;
@@ -15,12 +21,10 @@ public class Usuario {
 	private String SIT_USUA;
 	
 	public Usuario() {
-		super();
 	}
 
 	public Usuario(Integer cOD_USUA, Integer cOD_CLIE, String nOM_USUA, String cLV_USUA, String cLV_RECU,
 			String sIT_USUA) {
-		super();
 		COD_USUA = cOD_USUA;
 		COD_CLIE = cOD_CLIE;
 		NOM_USUA = nOM_USUA;
